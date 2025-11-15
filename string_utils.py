@@ -18,15 +18,10 @@ def split_before_each_uppercases(formula):
 
 
 def split_at_first_digit(formula):
-     digit_location = 1
-     for char in formula[1:]:
-          if char.isdigit ():
-              break
-          digit_location += 1
-     if digit_location == len (formula):
-              return formula, 1
-
-
+    for i, char in enumerate(formula):
+        if char.isdigit():
+            return formula[:i], formula[i:]
+    return formula, "1"  
 
 
 
