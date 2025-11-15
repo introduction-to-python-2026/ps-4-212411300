@@ -1,10 +1,18 @@
 def split_before_each_uppercases(formula):
-     start = 1 
-     end = 1 
-     split_formula =[]
-     for i, char in enumerate(formula):
-      if char.isupper() and i != 0:
-       split_formula.append(formula[start:end])
+     start = 0
+     end = 1
+     split_formula = []
+
+     if len(formula) == 0:
+       return formula
+         
+     while end < len(formula):
+      if formula [end].isupper():
+        split_formula.append(formula[start:end])
+        start=end
+      end +=1
+      split_formula.append(formula[start:])
+      
      return split_formula
 
 
